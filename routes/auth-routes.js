@@ -8,8 +8,16 @@ router.get('/login',(req,res)=>{
 
 
 router.get('/logout',(req,res)=>{
-res.send('Logging out')
-})
+   req.session.destroy((err)=>{
+        if(err){
+            console.log(`Logout exception - ${err}`)
+        }else{
+                req.session = null;
+                console.log("logout successful");
+                return res.redirect('/');
+        }
+   }) 
+});
 
 //auth with google
 router.get('/google',passport.authenticate('google',{
@@ -17,7 +25,7 @@ router.get('/google',passport.authenticate('google',{
 }));
 //Here, the authenticator will use the code from callback url and exchanges it to get the profile information
 router.get('/google/callback',passport.authenticate('google'),(req,res)=>{
-    res.send('res')
+    res.redirect('/profile/')
 });
 
 module.exports = router;

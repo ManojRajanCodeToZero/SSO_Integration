@@ -8,5 +8,8 @@ module.exports = {
     mongodb:{
         dbURI: 'mongodb://0.0.0.0:27017/code_under_dog',
         dbName: 'code_under_dog'
+    },
+    session: {
+        cookiesKey: 'code_under_dog_sso_integration'
     }
 }

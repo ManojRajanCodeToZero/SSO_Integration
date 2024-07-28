@@ -14,5 +14,5 @@ module.exports = {
             return cb(err)
         })
     },
-    getDB: ()=>{dbConnection}
+    getDB: ()=>dbConnection
 }

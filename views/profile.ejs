@@ -43,14 +43,14 @@
     <nav>
         <ul>
             <% if(user) { %>
-            <li>
-                <a href="/auth/logout">Logout</a>
-            </li>
-            <% } else { %>
-            <li>
-                <a href="/auth/login">Login</a>
-            </li>
-            <% } %>
+                <li>
+                    <a href="/auth/logout">Logout</a>
+                </li>
+                <% } else { %>
+                <li>
+                    <a href="/auth/login">Login</a>
+                </li>
+                <% } %>
             <li>
                 <a href="/">Home Page</a>
             </li>
@@ -60,11 +60,17 @@
         </ul>
     </nav>
     <header>
-        <h1>OAUTH - SSO Integration</h1>
-        <h2>Homepage</h2>
+        <center>
+            <h1>Welcome home, <%= user.username %> </h1>
+        </center>
     </header> 
     <main>
-        <p>This is the OAuth home page</p>
+        <center>
+        <p>
+            At last, logged in as a SSO authenticated used.
+        </p>
+        <img src=<%= user.thumbnail %>>
+    </center>
     </main>
 </body>
 
